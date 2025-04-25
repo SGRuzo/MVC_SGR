@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ModelTest {
-    static Model  m;
+    static Model m;
     static Coche coche;
 
 
@@ -15,17 +15,17 @@ class ModelTest {
     }
 
 
-        @Test
+    @Test
     void crearCoche() {
         assertNotNull(coche);
         assertTrue(Model.parking.contains(coche));
-        assertEquals("asd",coche.modelo);
-        assertEquals("asd123",coche.matricula);
+        assertEquals("asd", coche.modelo);
+        assertEquals("asd123", coche.matricula);
     }
 
     @Test
-    void cocheIsNull(){
-        assertNull(coche,"as123");
+    void cocheIsNull() {
+        assertNull(coche, "as123");
     }
 
     @Test
@@ -37,15 +37,14 @@ class ModelTest {
         assertNull(m.getVelocidad("123"));
     }
 
-            @Test
-            void aumentarVelocidad() {
-                m.cambiarVelocidad("asd123", 10); // Velocidad inicial
-                int nuevaVelocidad = m.aumentarV("asd123", 5); // aumentarla en 5
+    @Test
+    void aumentarVelocidad() {
+        m.cambiarVelocidad("asd123", 10); // Velocidad inicial
+        int nuevaVelocidad = m.aumentarV("asd123", 5); // aumentarla en 5
 
-                assertEquals(15, m.getVelocidad("asd123"));
+        assertEquals(15, m.getVelocidad("asd123"));
 
-            }
-
+    }
 
 
     @Test
@@ -55,8 +54,15 @@ class ModelTest {
 
         assertEquals(5, m.getVelocidad("asd123"));
     }
-        }
 
+    @Test
+    void velocidadInvalida() {
+
+        int velocidadNoValida = m.cambiarVelocidad("jkaeshdjks", 10);
+        assertEquals(-1, velocidadNoValida);
+
+    }
+}
 
 
 
