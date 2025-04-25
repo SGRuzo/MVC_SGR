@@ -43,6 +43,7 @@ class ModelTest {
                 int nuevaVelocidad = m.aumentarV("asd123", 5); // aumentarla en 5
 
                 assertEquals(15, m.getVelocidad("asd123"));
+
             }
 
 
