@@ -26,10 +26,10 @@ public class Controller {
 
         int velocidadValida = miModel.aumentarV("SBC 1234", 10);
         miModel.disminuirV("SBC 1234", 5);
-        System.out.println(miModel.getVelocidad("SBC 1234"));
+
 
         if (velocidadValida>=0) {
-            System.out.println("Velocidad valida");
+            System.out.println(miModel.getVelocidad("SBC 1234"));
         } else {
             System.out.println("Error");
         }
