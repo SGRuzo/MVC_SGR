@@ -58,9 +58,8 @@ class ModelTest {
     @Test
     void velocidadInvalida() {
 
-        int velocidadNoValida = m.cambiarVelocidad("jkaeshdjks", 10);
-        assertEquals(-1, velocidadNoValida);
-
+        Model noValido = new Model();
+        assertEquals(-1, noValido.disminuirV("uisgfj",12));
     }
 }
 
