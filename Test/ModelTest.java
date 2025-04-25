@@ -1,6 +1,5 @@
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestTemplate;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -45,7 +44,22 @@ class ModelTest {
 
                 assertEquals(15, m.getVelocidad("asd123")); // Verifica que la velocidad en el modelo sea consistente
             }
+
+
+
+    @Test
+    void disminuirV() {
+        ModelTest.m.cambiarVelocidad("asd123", 10); // Establece una velocidad inicial
+        int nuevaVelocidad = m.disminuirV("asd123", 5); // Aumenta la velocidad en 5
+
+        assertEquals(5, m.getVelocidad("asd123")); // Verifica que la velocidad en el modelo sea consistente
+    }
         }
+
+
+
+
+
 
 
 
