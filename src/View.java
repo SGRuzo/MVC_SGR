@@ -1,7 +1,7 @@
 /**
  * Clase encargada de la interacción con el usuario
  */
-public abstract class View {
+public class View {
     /**
      * Muestra la velocidad de un coche
      * @param matricula del coche
