@@ -1,7 +1,7 @@
 import java.lang.module.ModuleDescriptor;
 
 public class Controller {
-    public static void main(String[] args) {
+    public static void inico() {
 
         // Crear tres coches
         Model.crearCoche("LaFerrari", "SBC 1234");
