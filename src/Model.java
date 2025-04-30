@@ -12,7 +12,7 @@ public class Model {
      * @param matricula identificador unico
      * @return el coche creado
      */
-    public Coche crearCoche(String modelo, String matricula){
+    public static Coche crearCoche(String modelo, String matricula){
         Coche aux = new Coche(modelo, matricula);
         parking.add(aux);
         return aux;
@@ -23,7 +23,7 @@ public class Model {
      * @param matricula a buscar
      * @return chche o null si no existe
      */
-    public Coche getCoche(String matricula){
+    public static  Coche getCoche(String matricula){
         Coche aux = null;
         // recorre el array buscando por matricula
         for (Coche e: parking) {
@@ -40,7 +40,7 @@ public class Model {
      * @param v nueva velocidad
      * @return velocidad modificada
      */
-    public int cambiarVelocidad(String matricula, Integer v) {
+    public static int cambiarVelocidad(String matricula, Integer v) {
         // busca el coche
         getCoche(matricula).velocidad = v;
         // retorna la nueva velocidad
@@ -52,11 +52,11 @@ public class Model {
      * @param matricula
      * @return
      */
-    public int getVelocidad(String matricula) {
+    public static int getVelocidad(String matricula) {
         return getCoche(matricula).velocidad;
     }
 
-    public int aumentarV(String matricula, Integer v) {
+    public static int aumentarV(String matricula, Integer v) {
         Coche coche = getCoche(matricula);
         if (coche != null) {
             coche.velocidad += v;
@@ -65,7 +65,7 @@ public class Model {
         return -1;
     }
 
-    public int disminuirV(String matricula, Integer v) {
+    public static int disminuirV(String matricula, Integer v) {
         Coche coche = getCoche(matricula);
         if (coche != null) {
             coche.velocidad -= v;
