@@ -8,7 +8,7 @@ public class View {
      * Muestra la velocidad de un coche
      * @param matricula del coche
      * @param v velocidad
-     * @return true si se ha mostrado correctamente
+     * @return true si se ha mostrado correctamentee
      */
 
     public static void menu(){
