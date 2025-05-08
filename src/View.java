@@ -29,10 +29,21 @@ public class View {
                     String mooodelo = teclado.nextLine();
                     System.out.println("Introduce la matricula");
                     String matricula = teclado.next();
+                    Controller.crearCocheC(mooodelo,matricula);
                     break;
 
                 case 2:
-                    System.out.println();
+                    System.out.println("Introduce la matricula");
+                     matricula = teclado.nextLine();
+                    System.out.println("Introduce la nueva velocidad");
+                    int nvelocidad = teclado.nextInt();
+                    Controller.cambiarVelocidadC(matricula,nvelocidad);
+                    break;
+
+                case 3 :
+                    System.out.println("De que coche queres conocer la velocidad, introduce la matricula");
+                    matricula = teclado.nextLine();
+                    Controller.mostrarVelocidadC(matricula);
 
             }
 

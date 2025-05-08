@@ -1,8 +1,34 @@
 import java.lang.module.ModuleDescriptor;
 
 public class Controller {
+    public static Coche crearCocheC(String modelo, String matricula) {
+        Coche c = Model.crearCoche(modelo, matricula);
+        Model.parking.add(c);
+        return c;
+    }
+
+    public static void inicioC(){
+        Model.crearCoche("asd", "123po");
+        Model.crearCoche("qwe", "098z");
+        Model.crearCoche("zxc", "456x");
+
+
+    }
+
+
+
+    public static int  cambiarVelocidadC(String matricula, int velocidad) {
+        return Model.cambiarVelocidad(matricula, velocidad);
+    }
+
+    public static int mostrarVelocidadC(String matricula) {
+        return Model.getVelocidad(matricula);
+    }
+
+
     public static void inico() {
 
+/*
         // Crear tres coches
         Model.crearCoche("LaFerrari", "SBC 1234");
         Model.crearCoche("Alpine", "HYU 4567");
@@ -30,5 +56,6 @@ public class Controller {
             System.out.println("Error");
         }
 
+*/
     }
 }
