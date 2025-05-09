@@ -7,14 +7,17 @@ public class Controller {
         return c;
     }
 
-    public static void inicioC(){
-        Model.crearCoche("asd", "123po");
-        Model.crearCoche("qwe", "098z");
-        Model.crearCoche("zxc", "456x");
-
-
+    public static void mostrarCochesC () {
+        for (Coche coche : Model.parking){
+            System.out.println("Modelo: " + coche.modelo + ", Matrícula: " + coche.matricula + ", Velocidad: " + coche.velocidad + " km/h");
+        }
     }
 
+    public static void inicioC() {
+        Model.parking.add(Model.crearCoche("asd", "123po"));
+        Model.parking.add(Model.crearCoche("qwe", "098z"));
+        Model.parking.add(Model.crearCoche("zxc", "456x"));
+    }
 
 
     public static int  cambiarVelocidadC(String matricula, int velocidad) {

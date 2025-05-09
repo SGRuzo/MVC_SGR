@@ -16,6 +16,7 @@ public class View {
         int opcion;
         do {
             System.out.println("Elige una opcion");
+            System.out.println("0. Mostrar coches");
             System.out.println("1. Crear coche");
             System.out.println("2. Cambiar velocidad");
             System.out.println("3. Mostrar velocidad");
@@ -24,6 +25,11 @@ public class View {
             opcion = teclado.nextInt();
 
             switch (opcion) {
+                case 0:
+                    System.out.println("Mostrando coches:");
+                    Controller.mostrarCochesC();
+                    break;
+
                 case 1 :
                     System.out.println("Introduce el modelo ");
                     String mooodelo = teclado.nextLine();
