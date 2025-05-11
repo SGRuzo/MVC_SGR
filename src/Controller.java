@@ -2,34 +2,30 @@ import java.lang.module.ModuleDescriptor;
 
 public class Controller {
     public static Coche crearCocheC(String modelo, String matricula) {
-        Coche c = Model.crearCoche(modelo, matricula);
-        Model.parking.add(c);
-        return c;
+        return Model.crearCoche(modelo, matricula);
     }
 
-    public static void mostrarCochesC () {
-        for (Coche coche : Model.parking){
+    public static void mostrarCochesC() {
+        for (Coche coche : Model.parking) {
             System.out.println("Modelo: " + coche.modelo + ", Matrícula: " + coche.matricula + ", Velocidad: " + coche.velocidad + " km/h");
         }
     }
 
     public static void inicioC() {
-        Model.parking.add(Model.crearCoche("asd", "123po"));
-        Model.parking.add(Model.crearCoche("qwe", "098z"));
-        Model.parking.add(Model.crearCoche("zxc", "456x"));
+        Model.crearCoche("asd", "123po");
+        Model.crearCoche("qwe", "098z");
+        Model.crearCoche("zxc", "456x");
     }
 
-
-    public static int  cambiarVelocidadC(String matricula, int velocidad) {
+    public static int cambiarVelocidadC(String matricula, int velocidad) {
         return Model.cambiarVelocidad(matricula, velocidad);
     }
 
     public static int mostrarVelocidadC(String matricula) {
         return Model.getVelocidad(matricula);
     }
+}
 
-
-    public static void inico() {
 
 /*
         // Crear tres coches
@@ -60,5 +56,5 @@ public class Controller {
         }
 
 */
-    }
-}
+
+
