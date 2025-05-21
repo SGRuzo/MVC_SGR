@@ -1,37 +1,52 @@
 import java.lang.module.ModuleDescriptor;
 
 public class Controller {
-    public static void main(String[] args) {
-        // Instanciamos la vista y el modelo
-        View miView = new View();
-        Model miModel = new Model();
+    /**
+     * crea un cocheen el parking
+     * @param modelo
+     * @param matricula
+     * @return el coche creado
+     */
+    public static Coche crearCocheC(String modelo, String matricula) {
+        return Model.crearCoche(modelo, matricula);
+    }
 
-        // Crear tres coches
-        miModel.crearCoche("LaFerrari", "SBC 1234");
-        miModel.crearCoche("Alpine", "HYU 4567");
-        miModel.crearCoche("Aston Martin", "FGH 3333");
-
-        Coche ferrari = miModel.getCoche("SBC 1234");
-        // modifica la velocidad
-        int nuevaVelocidad = miModel.cambiarVelocidad("SBC 1234", 30);
-
-        // recoje la velocidad y la muestra (tarea de la View)
-        boolean hecho = miView.muestraVelocidad("SBC 1234", miModel.getVelocidad("SBC 1234"));
-
-        if (hecho) {
-            System.out.println("Correcto");
-        } else {
-            System.out.println("Error");
+    /**
+     * Muestra todos los coches del parking
+     */
+    public static void mostrarCochesC() {
+        for (Coche coche : Model.parking) {
+            View.mostrarCoche(coche);
         }
+    }
 
-        int velocidadActual = miModel.aumentarV("SBC 1234", 10);
-        miModel.disminuirV("SBC 1234", 5);
+    /**
+     * Crea un parking con 3 coches de ejemplo
+     */
+    public static void inicioC() {
+        Model.crearCoche("asd", "123po");
+        Model.crearCoche("qwe", "098z");
+        Model.crearCoche("zxc", "456x");
+    }
 
-        if (velocidadActual != -1) {
-            System.out.println(miModel.getVelocidad("SBC 1234"));
-        } else {
-            System.out.println("Error");
-        }
+    /**
+     * Cambia la velocidad de un coche
+     * @param matricula
+     * @param velocidad
+     * @return nueva velocidad del coche o -1 si no se encuentra
+     */
+    public static int cambiarVelocidadC(String matricula, int velocidad) {
+        return Model.cambiarVelocidad(matricula, velocidad);
+    }
 
+    /**
+     * Muestra la velocidad de un coche
+     * @param matricula
+     * @return la velocidad del coche
+     */
+    public static int mostrarVelocidadC(String matricula) {
+        return Model.getVelocidad(matricula);
     }
 }
+
+
