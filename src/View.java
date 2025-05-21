@@ -19,6 +19,7 @@ public class View {
                 case 0:
                     System.out.println("Mostrando coches:");
                     Controller.mostrarCochesC();
+
                     break;
 
                 case 1:
@@ -27,6 +28,9 @@ public class View {
                     System.out.println("Introduce la matrícula:");
                     String matricula = teclado.nextLine();
                     Controller.crearCocheC(modelo, matricula);
+                    Coche aux1= Controller.crearCocheC(modelo, matricula);
+                    if(aux1!=null) mostrarCoche(aux1);
+                    else System.out.println("Parámetros no válidos");
                     break;
 
                 case 2:
@@ -62,8 +66,24 @@ public class View {
         } while (opcion != 4);
     }
 
+    /**
+     * Muestra la velocidad de un coche
+     * @param matricula
+     * @param v
+     * @return true
+     */
     public static boolean muestraVelocidad(String matricula, Integer v) {
         System.out.println(matricula + ": " + v + " km/h");
         return true;
     }
+
+    /**
+     * Muestra un coche
+     * @param aux
+     */
+    public static void mostrarCoche(Coche aux){
+        System.out.println("Modelo: "+ aux.modelo+" Matricula: "+aux.matricula+" Velocidad: "+aux.velocidad);
+    }
+
+
 }
