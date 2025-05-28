@@ -57,6 +57,9 @@ public class View {
                     break;
 
                 case 4:
+
+
+                case 6:
                     System.out.println("Saliendo...");
                     break;
 
