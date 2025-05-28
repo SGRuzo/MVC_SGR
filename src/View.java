@@ -10,7 +10,9 @@ public class View {
             System.out.println("1. Crear coche");
             System.out.println("2. Cambiar velocidad");
             System.out.println("3. Mostrar velocidad");
-            System.out.println("4. Salir");
+            System.out.println("4. Avanzar");
+            System.out.println("5. Añadir Gasolina");
+            System.out.println("6. Salir");
 
             opcion = teclado.nextInt();
             teclado.nextLine(); // Consumir el salto de línea
@@ -38,7 +40,7 @@ public class View {
                     matricula = teclado.nextLine();
                     System.out.println("Introduce la nueva velocidad:");
                     int nvelocidad = teclado.nextInt();
-                    if (Controller.cambiarVelocidadC(matricula, nvelocidad) != -1) {
+                    if (Controller.avanzar(matricula, nvelocidad) != -1) {
                         System.out.println("Velocidad cambiada correctamente.");
                     } else {
                         System.out.println("Coche no encontrado.");
@@ -57,6 +59,16 @@ public class View {
                     break;
 
                 case 4:
+                    System.out.println("Introduce la matrícula:");
+                    matricula = teclado.nextLine();
+                    System.out.println("Introduce los m que quieres avanzar:");
+                    int nmetros = teclado.nextInt();
+                    if (Controller.avanzar(matricula, nmetros) != -1) {
+                        System.out.println("Se ha avanzado "+nmetros+"metros. ");
+                    } else {
+                        System.out.println("Coche no encontrado.");
+                    }
+                    break;
 
 
                 case 6:

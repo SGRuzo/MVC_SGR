@@ -25,7 +25,7 @@ class ModelTest {
 
 
     @Test
-    void cambiarVelocidad() {
+    void avanzar() {
         int velocidadModificada = m.cambiarVelocidad("asd123", 10);
 
         assertNotEquals(100, velocidadModificada);

@@ -1,5 +1,3 @@
-import java.lang.module.ModuleDescriptor;
-
 public class Controller {
     /**
      * crea un cocheen el parking
@@ -46,6 +44,16 @@ public class Controller {
      */
     public static int mostrarVelocidadC(String matricula) {
         return Model.getVelocidad(matricula);
+    }
+
+    /**
+     * añade metros de un coche
+     * @param matricula
+     * @param nmetros
+     * @return nuevo avance del coche o -1 si no se encuentra
+     */
+    public static int avanzar (String matricula, int nmetros) {
+        return Model.avanzar(matricula, nmetros);
     }
 }
 

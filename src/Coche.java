@@ -3,7 +3,7 @@ public class Coche {
     String modelo;
     Integer velocidad;
 
-    public Coche(String modelo, String matricula) {
+    public Coche(String modelo, String matricula, int posicion) {
         this.modelo = modelo;
         this.matricula = matricula;
         this.velocidad = 0;

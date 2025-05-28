@@ -10,7 +10,8 @@ public class Model {
      * @return el coche creado
      */
     public static Coche crearCoche(String modelo, String matricula) {
-        Coche aux = new Coche(modelo, matricula);
+        int posicion = 0;
+        Coche aux = new Coche(modelo, matricula, posicion);
         parking.add(aux);
         return aux;
     }
@@ -83,4 +84,20 @@ public class Model {
         }
         return -1;
     }
+
+    /**
+     * Cambia la velocidad de un coche
+     *
+     * @param matricula
+     * @param m
+     * @return la nueva velocidad del coche o -1 si no se encuentra
+     */
+    public static int avanzar(String matricula, int m) {
+        Coche coche = getCoche(matricula);
+        if (coche != null) {
+            return m + m;
+        }
+        return -1;
+    }
+    
 }
