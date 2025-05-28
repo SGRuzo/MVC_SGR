@@ -1,4 +1,5 @@
 public class Coche {
+    public int litros;
     String matricula;
     String modelo;
     Integer velocidad;

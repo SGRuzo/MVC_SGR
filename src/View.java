@@ -70,6 +70,17 @@ public class View {
                     }
                     break;
 
+                case 5:
+                    System.out.println("Introduce la matrícula:");
+                    matricula = teclado.nextLine();
+                    System.out.println("Introduce los l que quieras añadir:");
+                    int nlitros = teclado.nextInt();
+                    if (Controller.añadirGasolina(matricula, nlitros) != -1) {
+                        System.out.println("Se ha añadido "+nlitros+" litros de gasolina. ");
+                    } else {
+                        System.out.println("Coche no encontrado.");
+                    }
+                    break;
 
                 case 6:
                     System.out.println("Saliendo...");

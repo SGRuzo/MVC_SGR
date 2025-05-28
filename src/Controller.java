@@ -55,6 +55,16 @@ public class Controller {
     public static int avanzar (String matricula, int nmetros) {
         return Model.avanzar(matricula, nmetros);
     }
+
+    /**
+     * añade litros de gasolina de un coche
+     * @param matricula
+     * @param nlitros
+     * @return respostaje del coche o -1 si no se encuentra
+     */
+    public static int añadirGasolina (String matricula, int nlitros) {
+        return Model.avanzar(matricula, nlitros);
+    }
 }
 
 

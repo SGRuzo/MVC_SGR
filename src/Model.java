@@ -86,18 +86,31 @@ public class Model {
     }
 
     /**
-     * Cambia la velocidad de un coche
-     *
+     * Avancce en metros de un coche
      * @param matricula
-     * @param m
-     * @return la nueva velocidad del coche o -1 si no se encuentra
+     * @param nmetros
+     * @return  el avance de un coche o -1 si no se encuentra
      */
-    public static int avanzar(String matricula, int m) {
+    public static int avanzar(String matricula, int nmetros) {
         Coche coche = getCoche(matricula);
         if (coche != null) {
-            return m + m;
+            return 0 + nmetros;
         }
         return -1;
     }
-    
+
+    /**
+     * Añadir gasolina a un coche
+     * @param matricula
+     * @param nlitros
+     * @return repostaje de un coche o -1 si no se encuentra
+     */
+    public static int añadirGasolina(String matricula, int nlitros){
+        Coche coche= getCoche(matricula);
+        if (coche != null) {
+            coche.litros = + nlitros;
+            return coche.litros;
+        }
+        return -1;
+    }
 }
