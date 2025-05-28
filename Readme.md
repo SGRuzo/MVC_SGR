@@ -1,3 +1,13 @@
+# Readme Examen
+
+1. Comencé con un commit que señala cuando ha empezado la codificación.
+2. Modifiqué la View para añadir las opciones que permiten Avanzar y Añadir Gasolina.
+3. Los pasos a partir de aquí los hice por separado primero de avanzar y a continuacion de añadirGasolina.
+4. En el controller pasé la informacion necesaria de la View al Model.
+5. En el Model realicé las funciones. Avanzar permite añadir metros y añadirGasolina permite añadir litros.
+6. A lo largo de la codificacion me intenté adaptar al pseudocodigo pero me fui dando cuenta que había pequeñas instrucciones innecesarias.
+
+
 # Arquitectura MVC
 
 Aplicación que trabaja con objetos coches, modifica la velocidad y la muestra
