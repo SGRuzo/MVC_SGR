@@ -115,5 +115,8 @@ public class View {
         System.out.println("Modelo: "+ aux.modelo+" Matricula: "+aux.matricula+" Velocidad: "+aux.velocidad);
     }
 
+    public static void alarmaRepostar(String matricula) {
+        System.out.println("[vIEW] El coche con matrícula "+matricula+" necesita repostar gasolina (nivel bajo)");
+    }
 
 }
