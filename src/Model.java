@@ -116,6 +116,7 @@ public class Model {
             return false;
         }
         coche.gasolina += litros;
+        Observer.update(coche);
         return true;
     }
     /**
