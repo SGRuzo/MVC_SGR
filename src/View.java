@@ -29,8 +29,10 @@ public class View {
                     String modelo = teclado.nextLine();
                     System.out.println("Introduce la matrícula:");
                     String matricula = teclado.nextLine();
-                    Controller.crearCocheC(modelo, matricula);
-                    Coche aux1= Controller.crearCocheC(modelo, matricula);
+                    System.out.println("Introduce los litros de gasolina actuales:");
+                    double gasolina = Double.parseDouble(teclado.nextLine());
+                    Controller.crearCocheC(modelo, matricula, gasolina);
+                    Coche aux1= Controller.crearCocheC(modelo, matricula, gasolina);
                     if(aux1!=null) mostrarCoche(aux1);
                     else System.out.println("Parámetros no válidos");
                     break;
@@ -115,8 +117,8 @@ public class View {
         System.out.println("Modelo: "+ aux.modelo+" Matricula: "+aux.matricula+" Velocidad: "+aux.velocidad);
     }
 
-    public static void alarmaRepostar(String matricula) {
-        System.out.println("[vIEW] El coche con matrícula "+matricula+" necesita repostar gasolina (nivel bajo)");
+    public static void alarmaReportar(String matricula) {
+        System.out.println("[VIEW] El coche con matrícula "+matricula+" necesita repostar gasolina (nivel bajo)");
     }
 
 }

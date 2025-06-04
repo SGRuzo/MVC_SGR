@@ -9,9 +9,9 @@ public class Model {
      * @param matricula
      * @return el coche creado
      */
-    public static Coche crearCoche(String modelo, String matricula) {
+    public static Coche crearCoche(String modelo, String matricula, double gasolina) {
         int posicion = 0;
-        Coche aux = new Coche(modelo, matricula, posicion);
+        Coche aux = new Coche(modelo, matricula, gasolina);
         parking.add(aux);
         return aux;
     }

@@ -5,8 +5,8 @@ public class Controller {
      * @param matricula
      * @return el coche creado
      */
-    public static Coche crearCocheC(String modelo, String matricula) {
-        return Model.crearCoche(modelo, matricula);
+    public static Coche crearCocheC(String modelo, String matricula, double gasolina) {
+        return Model.crearCoche(modelo, matricula, gasolina);
     }
 
     /**
@@ -22,9 +22,9 @@ public class Controller {
      * Crea un parking con 3 coches de ejemplo
      */
     public static void inicioC() {
-        Model.crearCoche("asd", "123po");
-        Model.crearCoche("qwe", "098z");
-        Model.crearCoche("zxc", "456x");
+        Model.crearCoche("asd", "123po", 20.0);
+        Model.crearCoche("qwe", "098z",15.0);
+        Model.crearCoche("zxc", "456x", 10.0);
     }
 
     /**

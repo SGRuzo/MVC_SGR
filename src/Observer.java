@@ -4,7 +4,7 @@ public class Observer {
     final static double LIMITE_GASOLINA = 10.0;
 
     /**
-     * Metodo que se llama para actualizar el estado del coche
+     * Metodo que se llama para alarmar de baja gasolina
      * @param coche el coche a actualizar
      */
     public static void update(Coche coche) {
