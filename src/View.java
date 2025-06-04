@@ -40,7 +40,7 @@ public class View {
                     matricula = teclado.nextLine();
                     System.out.println("Introduce la nueva velocidad:");
                     int nvelocidad = teclado.nextInt();
-                    if (Controller.avanzar(matricula, nvelocidad) != -1) {
+                    if (Controller.avanzarC(matricula, nvelocidad)) {
                         System.out.println("Velocidad cambiada correctamente.");
                     } else {
                         System.out.println("Coche no encontrado.");
@@ -58,27 +58,31 @@ public class View {
                     }
                     break;
 
-                case 4:
+                case 4: // Avanzar
                     System.out.println("Introduce la matrícula:");
-                    matricula = teclado.nextLine();
-                    System.out.println("Introduce los m que quieres avanzar:");
-                    int nmetros = teclado.nextInt();
-                    if (Controller.avanzar(matricula, nmetros) != -1) {
-                        System.out.println("Se ha avanzado "+nmetros+"metros. ");
+                    String matriculaAvanzar = teclado.nextLine();
+                    System.out.println("Introduce los metros a avanzar:");
+                    int metros = teclado.nextInt();
+                    if (Controller.avanzarC(matriculaAvanzar, metros)) {
+                        System.out.println("El coche ha avanzado " + metros + " metros.");
+                        double gasolinaRestante = Controller.getGasolinaC(matriculaAvanzar);
+                        System.out.println("Gasolina restante: " + gasolinaRestante + " litros.");
                     } else {
-                        System.out.println("Coche no encontrado.");
+                        System.out.println("No se pudo avanzar. Verifica la matrícula, velocidad o gasolina.");
                     }
                     break;
 
-                case 5:
+                case 5: // Añadir Gasolina
                     System.out.println("Introduce la matrícula:");
-                    matricula = teclado.nextLine();
-                    System.out.println("Introduce los l que quieras añadir:");
-                    int nlitros = teclado.nextInt();
-                    if (Controller.añadirGasolina(matricula, nlitros) != -1) {
-                        System.out.println("Se ha añadido "+nlitros+" litros de gasolina. ");
+                    String matriculaGasolina = teclado.nextLine();
+                    System.out.println("Introduce los litros a añadir:");
+                    double litros = teclado.nextDouble();
+                    if (Controller.ponerGasolinaC(matriculaGasolina, litros)) {
+                        System.out.println("Gasolina añadida correctamente.");
+                        double gasolinaActual = Controller.getGasolinaC(matriculaGasolina);
+                        System.out.println("Gasolina actual: " + gasolinaActual + " litros.");
                     } else {
-                        System.out.println("Coche no encontrado.");
+                        System.out.println("No se pudo añadir gasolina. Verifica la matrícula.");
                     }
                     break;
 
@@ -89,7 +93,7 @@ public class View {
                 default:
                     System.out.println("Opción no válida.");
             }
-        } while (opcion != 4);
+        } while (opcion != 6);
     }
 
     /**

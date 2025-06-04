@@ -1,5 +1,5 @@
 public class Coche {
-    public int litros;
+    double gasolina;
     String matricula;
     String modelo;
     Integer velocidad;
@@ -8,6 +8,7 @@ public class Coche {
         this.modelo = modelo;
         this.matricula = matricula;
         this.velocidad = 0;
+        this.gasolina = 0.0;
     }
 
     @Override
@@ -16,6 +17,7 @@ public class Coche {
                 "matricula='" + matricula + '\'' +
                 ", modelo='" + modelo + '\'' +
                 ", velocidad=" + velocidad +
+                ", gasolina=" + gasolina +
                 '}';
     }
 }

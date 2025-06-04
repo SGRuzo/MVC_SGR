@@ -47,24 +47,34 @@ public class Controller {
     }
 
     /**
-     * añade metros de un coche
+     * Avanza un coche una cantidad de metros
      * @param matricula
-     * @param nmetros
-     * @return nuevo avance del coche o -1 si no se encuentra
+     * @param metros
+     * @return true si se ha podido avanzar, false si no
      */
-    public static int avanzar (String matricula, int nmetros) {
-        return Model.avanzar(matricula, nmetros);
+    public static boolean avanzarC(String matricula, int metros) {
+        return Model.avanzar(matricula, metros);
     }
 
     /**
-     * añade litros de gasolina de un coche
+     * Añade gasolina a un coche
      * @param matricula
-     * @param nlitros
-     * @return respostaje del coche o -1 si no se encuentra
+     * @param litros
+     * @return true si se ha podido añadir gasolina, false si no
      */
-    public static int añadirGasolina (String matricula, int nlitros) {
-        return Model.avanzar(matricula, nlitros);
+    public static boolean ponerGasolinaC(String matricula, double litros) {
+        return Model.ponerGasolina(matricula, litros);
     }
+
+    /**
+     * Obtiene la cantidad de gasolina de un coche
+     * @param matricula
+     * @return la cantidad de gasolina del coche
+     */
+    public static double getGasolinaC(String matricula) {
+        return Model.getGasolina(matricula);
+    }
+
 }
 
 

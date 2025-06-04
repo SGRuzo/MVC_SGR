@@ -86,31 +86,45 @@ public class Model {
     }
 
     /**
-     * Avancce en metros de un coche
+     * Avanza un coche una distancia determinada
      * @param matricula
-     * @param nmetros
-     * @return  el avance de un coche o -1 si no se encuentra
+     * @param metros
+     * @return
      */
-    public static int avanzar(String matricula, int nmetros) {
+    public static boolean avanzar(String matricula, int metros) {
         Coche coche = getCoche(matricula);
-        if (coche != null) {
-            return 0 + nmetros;
+        if (coche == null || coche.velocidad <= 0) {
+            return false;
         }
-        return -1;
+        double gasolinaNecesaria = (metros * coche.velocidad) / 1000.0;
+        if (coche.gasolina < gasolinaNecesaria) {
+            return false;
+        }
+        coche.gasolina -= gasolinaNecesaria;
+        return true;
     }
 
     /**
-     * Añadir gasolina a un coche
+     * Añade gasolina a un coche
      * @param matricula
-     * @param nlitros
-     * @return repostaje de un coche o -1 si no se encuentra
+     * @param litros
+     * @return true si se ha podido añadir gasolina, false si no
      */
-    public static int añadirGasolina(String matricula, int nlitros){
-        Coche coche= getCoche(matricula);
-        if (coche != null) {
-            coche.litros = + nlitros;
-            return coche.litros;
+    public static boolean ponerGasolina(String matricula, double litros) {
+        Coche coche = getCoche(matricula);
+        if (coche == null) {
+            return false;
         }
-        return -1;
+        coche.gasolina += litros;
+        return true;
+    }
+    /**
+     * Obtiene la cantidad de gasolina de un coche
+     * @param matricula
+     * @return la cantidad de gasolina del coche o -1 si no se encuentra
+     */
+    public static double getGasolina(String matricula) {
+        Coche coche = getCoche(matricula);
+        return coche != null ? coche.gasolina : -1;
     }
 }
