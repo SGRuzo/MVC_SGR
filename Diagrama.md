@@ -29,3 +29,23 @@ sequenceDiagram
     deactivate View
     View->>View: System.out.println(velocidad)
 `````
+      
+`````mermaid
+
+sequenceDiagram
+    participant View
+    participant Controller
+    participant Model
+    participant Observer
+    
+    View->>Controller: ponerGasolinaC(matricula, litros)
+    Controller->>Model: ponerGasolina(matricula, litros)
+    Model->>Model: Actualiza gasolina del coche
+    Model->>Observer: update(coche)
+    alt gasolina < 10
+    ObserverGasolina->>View: alarmaRepostar(matricula)
+    end
+    Model-->>Controller: true/false
+    Controller-->>View: true/false
+    View->>View: alarmaRepostar(String matricula)
+`````
